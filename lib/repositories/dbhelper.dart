@@ -7,7 +7,7 @@ class DbHelper {
 
   static final DbHelper instance = DbHelper._init();
 
-  static final String dbFileName = 'igym.db';
+  static final String _dbFileName = 'igym.db';
 
   static Database? _database;
 
@@ -15,13 +15,13 @@ class DbHelper {
 
   Future<Database> get database async {
     if (_database != null) return _database!;
-    print('File $dbFileName non trovato');
-    _database = await _initDB(dbFileName);
+    print('File $_dbFileName non trovato');
+    _database = await _initDB(_dbFileName);
     return _database!;
   }
 
   Future<Database> _initDB(String filePath) async {
-    print('Preparazione $dbFileName in corso...');
+    print('Preparazione $_dbFileName in corso...');
     String dbPath = await getDatabasesPath();
     String fullPath = join(dbPath, filePath);
     return await openDatabase(fullPath, version: 1, onCreate: _onCreate);
@@ -47,12 +47,12 @@ class DbHelper {
           ON DELETE CASCADE ON UPDATE NO ACTION
       )
     ''');
-    print('$dbFileName completato');
+    print('$_dbFileName completato');
   }
 
   Future close() async {
     Database db = await instance.database;
     db.close();
-    print('$dbFileName connessione chiusa');
+    print('$_dbFileName connessione chiusa');
   }
 }
