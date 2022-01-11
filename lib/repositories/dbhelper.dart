@@ -15,17 +15,20 @@ class DbHelper {
 
   Future<Database> get database async {
     if (_database != null) return _database!;
+    print('File $dbFileName non trovato');
     _database = await _initDB(dbFileName);
     return _database!;
   }
 
   Future<Database> _initDB(String filePath) async {
+    print('Preparazione $dbFileName in corso...');
     String dbPath = await getDatabasesPath();
     String fullPath = join(dbPath, filePath);
     return await openDatabase(fullPath, version: 1, onCreate: _onCreate);
   }
 
   Future _onCreate(Database db, int version) async {
+    print('Creazione tabelle...');
     await db.execute('''
       CREATE TABLE $workoutTable (
         ${WorkoutFields.id} INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -44,10 +47,12 @@ class DbHelper {
           ON DELETE CASCADE ON UPDATE NO ACTION
       )
     ''');
+    print('$dbFileName completato');
   }
 
   Future close() async {
     Database db = await instance.database;
     db.close();
+    print('$dbFileName connessione chiusa');
   }
 }
