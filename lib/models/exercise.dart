@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:igym/enums/muscle_group.dart';
-import 'package:igym/models/workout.dart';
 
 final String exerciseTable = 'EXERCISE';
 

@@ -3,7 +3,7 @@ import 'package:igym/repositories/base_repository.dart';
 import 'package:igym/repositories/dbhelper.dart';
 import 'package:sqflite/sqflite.dart';
 
-class ExerciseRepository implements BaseRepository<int, Workout> {
+class WorkoutRepository implements BaseRepository<int, Workout> {
 
   final DbHelper _dbHelper = DbHelper.instance;
 
@@ -15,7 +15,7 @@ class ExerciseRepository implements BaseRepository<int, Workout> {
   }
 
   @override
-  void delete(int id) async {
+  Future<void> delete(int id) async {
     Database db = await _dbHelper.database;
     await db.delete(
         workoutTable,

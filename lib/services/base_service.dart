@@ -1,4 +1,4 @@
-abstract class BaseRepository<K, T> {
+abstract class BaseService<K, T> {
   Future<T> insert(T model);
   Future<int> update(T model);
   Future<void> delete(K id);

@@ -15,7 +15,7 @@ class ExerciseRepository implements BaseRepository<int, Exercise> {
   }
 
   @override
-  void delete(int id) async {
+  Future<void> delete(int id) async {
     Database db = await _dbHelper.database;
     await db.delete(
         exerciseTable,
