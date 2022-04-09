@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:igym/enums/muscle_group.dart';
 
-class ActivitiesFragment extends StatefulWidget {
+class ActivitiesPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _ActivitiesFragmentState();
+  State<StatefulWidget> createState() => _ActivitiesPageState();
 
 }
 
-class _ActivitiesFragmentState extends State<ActivitiesFragment> {
+class _ActivitiesPageState extends State<ActivitiesPage> {
   @override
   Widget build(BuildContext context) {
     return Row(

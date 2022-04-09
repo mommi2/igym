@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:igym/fragments/activities_fragment.dart';
-import 'package:igym/fragments/workouts_fragment.dart';
+import 'package:igym/pages/activities_page.dart';
+import 'package:igym/pages/workouts_page.dart';
+
 
 class Home extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
   List<Widget> _listWidgets = [
-    ActivitiesFragment(),
+    ActivitiesPage(),
     WorkoutsPage()
   ];
 
