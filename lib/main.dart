@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:igym/pages/home_page.dart';
-import 'package:igym/pages/workouts_page.dart';
+import 'package:igym/home.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(IGymApp());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class IGymApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'iGym',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(title: 'iGym'),
+      home: Home()
     );
   }
 }

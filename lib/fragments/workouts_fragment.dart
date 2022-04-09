@@ -4,10 +4,6 @@ import 'package:igym/models/workout.dart';
 import 'package:igym/services/workout_service.dart';
 
 class WorkoutsPage extends StatefulWidget {
-  WorkoutsPage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _WorkoutsPageState createState() => _WorkoutsPageState();
 }
@@ -37,9 +33,6 @@ class _WorkoutsPageState extends State<WorkoutsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: FutureBuilder(
         future: _asyncInit(),
         builder: (context, snapshot) {
